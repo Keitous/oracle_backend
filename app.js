@@ -25,7 +25,10 @@ const authenticateToken = (req, res, next) => {
 
 const app = express();
 const router = express.Router(); // Crée une instance de Router
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: 'https://oracle-frontend.onrender.com', // Remplace par l'URL de ton frontend
+}));
 app.use(bodyParser.json());
 app.use(express.json());
 
