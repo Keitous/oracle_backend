@@ -274,7 +274,7 @@ app.get('/api/users/:nom_acces', async (req, res) => {
 });
 
 // Route pour obtenir les véhicules
-app.get('/api/vehicules', /*authenticateToken,*/ async (req, res) => {
+app.get('/api/vehicules', async (req, res) => {
   try {
     const connection = await oracledb.getConnection(dbConfig);
     const result = await connection.execute('SELECT * FROM GETV.TC_VEHICULE');
